@@ -1,0 +1,114 @@
+/*GLOBAL*/
+:root {
+    --couleurJaune: #f8b800
+}
+
+.container {
+    font-family: monospace;
+}
+
+/*HEADER*/
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 200px;
+
+    margin-bottom: 30px;
+}
+
+header img {
+    width: 300px;
+}
+
+header h3 {
+    color: var(--couleurJaune);
+}
+
+/*CARROUSEL*/
+.carrousel {
+    position: relative;
+    overflow: hidden;
+}
+
+.carrousel .images {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 600px;
+}
+
+.slider-item {
+    width: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.fleches {
+    position: absolute;
+    top: 50%;
+    color: var(--couleurJaune);
+    cursor: pointer;
+    padding-left: 10px;
+}
+
+#droite {
+    float: right;
+    padding-top: 7px;
+    padding-right: 20px;
+}
+
+/*MENU*/
+nav ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    position: absolute;
+    top: 200px;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+nav ul li {
+    background-color: rgba(112, 112, 112, 0.5);
+    min-width: 110px;
+    height: 45px;
+    color: white;
+    text-align: center;
+    padding-top: 10px;
+    font-weight: 20px;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px #444;
+}
+
+nav ul :first-child {
+    background-color: var(--couleurJaune);
+}
+
+nav ul li:hover {
+    background-color: rgb(100, 100, 100);
+}
+
+.btn-menu {
+    position: absolute;
+    top: 200px;
+    right: 20px;
+    cursor: pointer;
+    display: none;
+}
+
+/*GESTION DE L'ECRAN*/
+@media screen and (max-width: 900px) {
+    .btn-menu {
+        display: block;
+    }
+
+    nav ul {
+        opacity: 0.5;
+        flex-direction: column;
+        width: 250px;
+        left: calc(50% - 100px);
+        top: 225px;
+    }
+}
+
